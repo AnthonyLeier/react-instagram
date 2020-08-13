@@ -15,6 +15,8 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: 'row',
 		alignItems: 'center',
+		backgroundColor: '#121212',
+		marginBottom: 8,
 	},
 	avatar: {
 		width: 30,
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
 		marginHorizontal: 10,
 	},
 	nickname: {
-		color: '#444',
+		color: '#bbb',
 		marginVertical: 10,
 		fontSize: 15,
 		fontWeight: 'bold',

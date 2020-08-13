@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Platform, Image} from 'react-native';
-import icon from '../../assets/imgs/icon.png';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class Header extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
 				<View style={styles.rowContainer}>
-					<Image source={icon} style={styles.image} />
-					<Text style={styles.title}>Bortogram</Text>
+					<Icon name="camera" color="white" style={styles.icon} size={20} />
+					<Text style={styles.title}>Instagram</Text>
 				</View>
 			</View>
 		);
@@ -20,21 +20,21 @@ const styles = StyleSheet.create({
 		marginTop: Platform.OS === 'ios' ? 20 : 0,
 		padding: 10,
 		borderBottomWidth: 1,
-		borderColor: '#BBB',
+		borderColor: '#444',
+		backgroundColor: '#121212',
 	},
 	rowContainer: {
 		flexDirection: 'row',
 		alignItems: 'center',
 	},
-	image: {
-		height: 30,
-		width: 30,
-		resizeMode: 'contain',
+	icon: {
+		marginHorizontal: 5,
 	},
 	title: {
-		color: '#000',
+		color: 'white',
 		fontFamily: 'shelter',
 		height: 37,
 		fontSize: 28,
+		marginHorizontal: 5,
 	},
 });
