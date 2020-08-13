@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Image, Dimensions} from 'react-native';
 import Author from './Author';
 import Comments from './Comments';
+import AddComment from './AddComment';
 
 export default class Post extends Component {
 	render() {
@@ -10,6 +11,7 @@ export default class Post extends Component {
 				<Author email="anthonyleierlw@gmail.com" nickname="anthonyleier" />
 				<Image source={this.props.image} style={styles.image} />
 				<Comments comments={this.props.comments} />
+				<AddComment />
 			</View>
 		);
 	}
@@ -19,7 +21,7 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#121212',
-		paddingTop: 5
+		paddingTop: 5,
 	},
 	image: {
 		width: Dimensions.get('window').width,
