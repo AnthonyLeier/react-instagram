@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {StyleSheet, Flatlist, ScrollView, TouchableWithoutFeedback} from 'react-native';
+import {StyleSheet, FlatList, SafeAreaView} from 'react-native';
 import Header from '../components/Header';
 import Post from '../components/Post';
 import examplePosts from '../info/examplePosts';
+import commonColors from '../info/commonColors';
 
 export default class Feed extends Component {
 	state = {
@@ -11,33 +12,23 @@ export default class Feed extends Component {
 
 	render() {
 		return (
-			<ScrollView style={{flex: 1}}>
+			<SafeAreaView style={styles.container}>
 				<Header />
-				<Post
-					image={this.state.posts[0].image}
-					comments={this.state.posts[0].comments}
-					email={this.state.posts[0].email}
-					nickname={this.state.posts[0].nickname}
+				<FlatList
+					data={this.state.posts}
+					keyExtractor={item => `${item.id}`}
+					renderItem={({item}) => <Post key={item.id} {...item} />}
 				/>
-				<Post
-					image={this.state.posts[1].image}
-					comments={this.state.posts[1].comments}
-					email={this.state.posts[1].email}
-					nickname={this.state.posts[1].nickname}
-				/>
-				<Post
-					image={this.state.posts[2].image}
-					comments={this.state.posts[2].comments}
-					email={this.state.posts[2].email}
-					nickname={this.state.posts[2].nickname}
-				/>
-				<Post
-					image={this.state.posts[3].image}
-					comments={this.state.posts[3].comments}
-					email={this.state.posts[3].email}
-					nickname={this.state.posts[3].nickname}
-				/>
-			</ScrollView>
+			</SafeAreaView>
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'center',
+		backgroundColor: commonColors.main,
+	},
+});

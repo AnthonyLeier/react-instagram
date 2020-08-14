@@ -3,6 +3,7 @@ import {StyleSheet, View, Image, Dimensions} from 'react-native';
 import Author from './Author';
 import Comments from './Comments';
 import AddComment from './AddComment';
+import commonColors from '../info/commonColors';
 
 export default class Post extends Component {
 	render() {
@@ -20,15 +21,15 @@ export default class Post extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#121212',
+		backgroundColor: commonColors.main,
 		paddingTop: 5,
-		paddingBottom: 20
+		paddingBottom: 20,
 	},
 	image: {
 		width: Dimensions.get('window').width,
 		height: Dimensions.get('window').width,
 		padding: 0,
 		resizeMode: 'contain',
-		backgroundColor: '#171717',
+		backgroundColor: commonColors.darker,
 	},
 });

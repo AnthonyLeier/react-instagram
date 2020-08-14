@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, TextInput, TouchableWithoutFeedback as TWF, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import commonColors from '../info/commonColors';
 
 export default class AddComment extends Component {
 	state = {
@@ -29,7 +30,7 @@ export default class AddComment extends Component {
 						}}
 					/>
 					<TWF onPress={() => this.setState({editMode: false})}>
-						<Icon name="times" size={15} color="#aaa" />
+						<Icon name="times" size={15} color={commonColors.subtitle} />
 					</TWF>
 				</View>
 			);
@@ -37,7 +38,7 @@ export default class AddComment extends Component {
 			commentArea = (
 				<TWF onPress={() => this.setState({editMode: true})}>
 					<View style={styles.container}>
-						<Icon name="comment-o" size={20} color="#aaa" />
+						<Icon name="comment-o" size={20} color={commonColors.subtitle} />
 						<Text style={styles.caption}>Adicione um comentário...</Text>
 					</View>
 				</TWF>
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
 	caption: {
 		marginLeft: 10,
 		fontSize: 12,
-		color: '#CCC',
+		color: commonColors.lighter,
 	},
 	input: {
 		width: '90%',

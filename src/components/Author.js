@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Gravatar} from 'react-native-gravatar';
+import commonColors from '../info/commonColors';
 
 export default props => {
 	return (
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		backgroundColor: '#121212',
+		backgroundColor: commonColors.main,
 		marginBottom: 8,
 	},
 	avatar: {
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
 		marginHorizontal: 10,
 	},
 	nickname: {
-		color: '#bbb',
+		color: commonColors.title,
 		marginVertical: 10,
 		fontSize: 15,
 		fontWeight: 'bold',

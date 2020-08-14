@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Platform, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import commonColors from '../info/commonColors';
 
 export default class Header extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
 				<View style={styles.rowContainer}>
-					<Icon name="camera" color="white" style={styles.icon} size={20} />
+					<Icon name="camera" color={commonColors.secondary} style={styles.icon} size={20} />
 					<Text style={styles.title}>Instagram</Text>
 				</View>
 			</View>
@@ -20,8 +21,8 @@ const styles = StyleSheet.create({
 		marginTop: Platform.OS === 'ios' ? 20 : 0,
 		padding: 10,
 		borderBottomWidth: 1,
-		borderColor: '#444',
-		backgroundColor: '#121212',
+		borderColor: commonColors.border,
+		width: '100%',
 	},
 	rowContainer: {
 		flexDirection: 'row',
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
 		marginHorizontal: 5,
 	},
 	title: {
-		color: 'white',
+		color: commonColors.secondary,
 		fontFamily: 'shelter',
 		height: 37,
 		fontSize: 28,

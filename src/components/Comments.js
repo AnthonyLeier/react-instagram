@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Dimensions, Alert} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
+import commonColors from '../info/commonColors';
 
 export default class Comments extends Component {
 	render() {
@@ -32,10 +33,10 @@ const styles = StyleSheet.create({
 	nickname: {
 		marginLeft: 5,
 		fontWeight: 'bold',
-		color: '#bbb',
+		color: commonColors.title,
 	},
 	comment: {
-		color: '#aaa',
+		color: commonColors.subtitle,
 		marginLeft: 5,
 	},
 });
