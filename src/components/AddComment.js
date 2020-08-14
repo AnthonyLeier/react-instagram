@@ -37,7 +37,7 @@ export default class AddComment extends Component {
 			commentArea = (
 				<TWF onPress={() => this.setState({editMode: true})}>
 					<View style={styles.container}>
-						<Icon name="comment-o" size={25} color="#aaa" />
+						<Icon name="comment-o" size={20} color="#aaa" />
 						<Text style={styles.caption}>Adicione um comentário...</Text>
 					</View>
 				</TWF>
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		marginTop: 10,
+		marginLeft: 15,
 	},
 	caption: {
 		marginLeft: 10,

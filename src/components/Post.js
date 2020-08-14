@@ -8,7 +8,7 @@ export default class Post extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<Author email="anthonyleierlw@gmail.com" nickname="anthonyleier" />
+				<Author email={this.props.email} nickname={this.props.nickname} />
 				<Image source={this.props.image} style={styles.image} />
 				<Comments comments={this.props.comments} />
 				<AddComment />
@@ -22,12 +22,13 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: '#121212',
 		paddingTop: 5,
+		paddingBottom: 20
 	},
 	image: {
 		width: Dimensions.get('window').width,
-		height: (Dimensions.get('window').width * 3) / 4,
+		height: Dimensions.get('window').width,
 		padding: 0,
-		resizeMode: 'cover',
+		resizeMode: 'contain',
 		backgroundColor: '#171717',
 	},
 });
