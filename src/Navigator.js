@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Feed from './screens/Feed';
+import AddPhoto from './screens/AddPhoto';
 import commonColors from './info/commonColors';
 
 const Tab = createBottomTabNavigator();
@@ -21,7 +22,7 @@ export default Navigator = () => {
 						} else if (route.name === 'Search') {
 							iconName = 'search';
 						} else if (route.name === 'AddPhoto') {
-							iconName = 'plus';
+							iconName = 'plus-square';
 						} else if (route.name === 'Notifications') {
 							iconName = 'heart';
 						} else if (route.name === 'Profile') {
@@ -36,12 +37,11 @@ export default Navigator = () => {
 					inactiveTintColor: commonColors.subtitle,
 					style: {backgroundColor: commonColors.main, borderTopWidth: 0},
 					showLabel: false,
-					tabStyle: {borderColor: 'red'},
 				}}
 				hideShadow={true}>
 				<Tab.Screen name="Feed" component={Feed} />
 				<Tab.Screen name="Search" component={Feed} />
-				<Tab.Screen name="AddPhoto" component={Feed} />
+				<Tab.Screen name="AddPhoto" component={AddPhoto} />
 				<Tab.Screen name="Notifications" component={Feed} />
 				<Tab.Screen name="Profile" component={Feed} />
 			</Tab.Navigator>

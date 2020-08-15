@@ -1,22 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {StyleSheet, View, Image, Dimensions} from 'react-native';
 import Author from './Author';
 import Comments from './Comments';
 import AddComment from './AddComment';
 import commonColors from '../info/commonColors';
 
-export default class Post extends Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				<Author email={this.props.email} nickname={this.props.nickname} />
-				<Image source={this.props.image} style={styles.image} />
-				<Comments comments={this.props.comments} />
-				<AddComment />
-			</View>
-		);
-	}
-}
+export default props => {
+	return (
+		<View style={styles.container}>
+			<Author email={props.email} nickname={props.nickname} />
+			<Image source={props.image} style={styles.image} />
+			<Comments comments={props.comments} />
+			<AddComment />
+		</View>
+	);
+};
 
 const styles = StyleSheet.create({
 	container: {

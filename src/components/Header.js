@@ -1,20 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {StyleSheet, Text, View, Platform, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import commonColors from '../info/commonColors';
 
-export default class Header extends Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				<View style={styles.rowContainer}>
-					<Icon name="camera" color={commonColors.secondary} style={styles.icon} size={20} />
-					<Text style={styles.title}>Instagram</Text>
-				</View>
+export default props => {
+	return (
+		<View style={styles.container}>
+			<View style={styles.rowContainer}>
+				<Icon name="camera" color={commonColors.secondary} style={styles.icon} size={20} />
+				<Text style={styles.title}>Instagram</Text>
 			</View>
-		);
-	}
-}
+		</View>
+	);
+};
 
 const styles = StyleSheet.create({
 	container: {
