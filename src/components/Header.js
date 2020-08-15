@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
 	container: {
 		marginTop: Platform.OS === 'ios' ? 20 : 0,
 		padding: 10,
-		borderBottomWidth: 1,
 		borderColor: commonColors.border,
 		width: '100%',
 	},
