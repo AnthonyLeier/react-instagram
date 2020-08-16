@@ -1,11 +1,12 @@
 import React from 'react';
-import {StyleSheet, SafeAreaView, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, SafeAreaView, Text, View} from 'react-native';
 import {Gravatar} from 'react-native-gravatar';
 import Button from '../components/Button';
 import commonColors from '../info/commonColors';
+import Header from '../components/Header';
 
 export default props => {
-	const options = {nickname: 'nickname', email: 'test@example.com', secure: true};
+	const options = {nickname: 'anthonyleier', email: 'anthonyleierlw@gmail.com', secure: true};
 
 	const logout = () => {
 		this.props.navigation.navigate('Auth');
@@ -13,10 +14,13 @@ export default props => {
 
 	return (
 		<SafeAreaView style={styles.container}>
+			<Header />
 			<Gravatar options={{email: options.email, secure: options.secure}} style={styles.avatar} />
 			<Text style={styles.nickname}>{options.nickname}</Text>
 			<Text style={styles.email}>{options.email}</Text>
-			<Button function={logout}>Sair</Button>
+			<Button function={logout} color={commonColors.danger} style={styles.button}>
+				Sair
+			</Button>
 		</SafeAreaView>
 	);
 };
@@ -25,15 +29,7 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		alignItems: 'center',
-	},
-	button: {
-		marginTop: 30,
-		padding: 10,
-		backgroundColor: '#4286f4',
-	},
-	buttonText: {
-		fontSize: 20,
-		color: 'white',
+		backgroundColor: commonColors.main,
 	},
 	avatar: {
 		width: 150,
@@ -45,9 +41,14 @@ const styles = StyleSheet.create({
 		marginTop: 30,
 		fontSize: 30,
 		fontWeight: 'bold',
+		color: commonColors.title,
 	},
 	email: {
-		marginTop: 30,
+		marginTop: 15,
 		fontSize: 25,
+		color: commonColors.subtitle,
+	},
+	button: {
+		marginTop: 100,
 	},
 });

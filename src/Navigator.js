@@ -9,6 +9,7 @@ import Login from './screens/Login';
 import Register from './screens/Register';
 import Profile from './screens/Profile';
 import commonColors from './info/commonColors';
+import Default from './screens/Default';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -24,7 +25,7 @@ function LoginOrRegister() {
 
 export default props => {
 	const isLogged = () => {
-		logged = false;
+		logged = true;
 		if (logged) return Profile;
 		else return LoginOrRegister;
 	};
@@ -32,7 +33,7 @@ export default props => {
 	return (
 		<NavigationContainer>
 			<Tab.Navigator
-				initialRouteName="Feed"
+				initialRouteName="AddPhoto"
 				screenOptions={({route}) => ({
 					tabBarIcon: ({color, size}) => {
 						let iconName;
@@ -59,9 +60,9 @@ export default props => {
 					showLabel: false,
 				}}>
 				<Tab.Screen name="Feed" component={Feed} />
-				<Tab.Screen name="Search" component={Feed} />
+				<Tab.Screen name="Search" component={Default} />
 				<Tab.Screen name="AddPhoto" component={AddPhoto} />
-				<Tab.Screen name="Notifications" component={Feed} />
+				<Tab.Screen name="Notifications" component={Default} />
 				<Tab.Screen name="Profile" component={isLogged()} />
 			</Tab.Navigator>
 		</NavigationContainer>

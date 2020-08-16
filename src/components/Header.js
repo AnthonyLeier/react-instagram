@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Platform, Image} from 'react-native';
+import {StyleSheet, Text, View, Platform} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import commonColors from '../info/commonColors';
 
@@ -26,13 +26,13 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	icon: {
-		marginHorizontal: 5,
+		marginHorizontal: 10,
 	},
 	title: {
 		color: commonColors.secondary,
-		fontFamily: 'shelter',
-		height: 37,
-		fontSize: 28,
+		fontFamily: 'Billabong',
+		height: 40,
+		fontSize: 32,
 		marginHorizontal: 5,
 	},
 });

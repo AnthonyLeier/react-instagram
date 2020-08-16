@@ -4,7 +4,7 @@ import commonColors from '../info/commonColors';
 
 export default props => {
 	return (
-		<TouchableOpacity onPress={props.function} style={styles.container}>
+		<TouchableOpacity onPress={props.function} style={[styles.container, {backgroundColor: props.color}, props.style]}>
 			<Text style={styles.text}>{props.children}</Text>
 		</TouchableOpacity>
 	);
@@ -12,13 +12,12 @@ export default props => {
 
 const styles = StyleSheet.create({
 	container: {
-		marginTop: 30,
-		padding: 10,
-		backgroundColor: commonColors.secondary,
-		borderRadius: 15,
+		borderRadius: 5,
 	},
 	text: {
 		fontSize: 20,
-		color: commonColors.main,
+		marginVertical: 10,
+		marginHorizontal: 15,
+		color: commonColors.secondary,
 	},
 });

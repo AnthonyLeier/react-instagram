@@ -3,17 +3,29 @@ import {TextInput, StyleSheet} from 'react-native';
 import commonColors from '../info/commonColors';
 
 export default props => {
-	return <TextInput {...props} style={styles.default} />;
+	return (
+		<TextInput
+			placeholderTextColor={commonColors.secondary}
+			color={commonColors.secondary}
+			multiline={true}
+			numberOfLines={4}
+			style={styles.default}
+			placeholder={props.placeholder}
+			value={props.value}
+			onChangeText={props.onChangeText}
+		/>
+	);
 };
 
 const styles = StyleSheet.create({
 	default: {
 		marginTop: 20,
 		width: '90%',
-		backgroundColor: '#EEE',
-		height: 40,
+		backgroundColor: commonColors.darker,
+		height: 100,
+		justifyContent: 'flex-start',
 		borderWidth: 1,
-		borderColor: '#333',
+		borderColor: commonColors.border,
 		paddingLeft: 15,
 	},
 });

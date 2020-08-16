@@ -33,6 +33,7 @@
 		F2631433B3BA44F8985B322B /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 76D826D197344280904519AB /* Octicons.ttf */; };
 		8DC58CBBE9C7409092FE745F /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2436B931AD14BB691769470 /* SimpleLineIcons.ttf */; };
 		D0EEA8FDEC0C4E1AA17B2892 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51455D2DD07647D99D4F5BF8 /* Zocial.ttf */; };
+		B722989521E44E13B43AC39D /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B03D3BC5FB4BCA98C0D4CD /* Billabong.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		76D826D197344280904519AB /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A2436B931AD14BB691769470 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		51455D2DD07647D99D4F5BF8 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		66B03D3BC5FB4BCA98C0D4CD /* Billabong.ttf */ = {isa = PBXFileReference; name = "Billabong.ttf"; path = "../assets/fonts/Billabong.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				76D826D197344280904519AB /* Octicons.ttf */,
 				A2436B931AD14BB691769470 /* SimpleLineIcons.ttf */,
 				51455D2DD07647D99D4F5BF8 /* Zocial.ttf */,
+				66B03D3BC5FB4BCA98C0D4CD /* Billabong.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				F2631433B3BA44F8985B322B /* Octicons.ttf in Resources */,
 				8DC58CBBE9C7409092FE745F /* SimpleLineIcons.ttf in Resources */,
 				D0EEA8FDEC0C4E1AA17B2892 /* Zocial.ttf in Resources */,
+				B722989521E44E13B43AC39D /* Billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

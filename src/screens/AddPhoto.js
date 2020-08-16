@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TextInput, Image, Dimensions, Platform, Alert} from 'react-native';
+import {SafeAreaView, View, Text, StyleSheet, TextInput, Image, Dimensions, Platform, Alert} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import commonColors from '../info/commonColors';
 import Button from '../components/Button';
 import Input from '../components/Input';
+import Header from '../components/Header';
 
 export default class AppPhoto extends Component {
 	state = {
@@ -32,22 +33,27 @@ export default class AppPhoto extends Component {
 
 	render() {
 		return (
-			<View style={styles.container}>
+			<SafeAreaView style={styles.container}>
+				<Header />
 				<Text style={styles.title}>Compartilhe uma imagem</Text>
 				<View style={styles.imageContainer}>
 					<Image source={this.state.image} style={styles.image} />
 				</View>
 				<Input
 					placeholder="Descrição da Foto"
-					placeholderTextColor={commonColors.secondary}
 					value={this.state.comment}
 					onChangeText={comment => this.setState({comment})}
+					style={styles.input}
 				/>
 				<View style={styles.buttonContainer}>
-					<Button function={this.pickImage}>Escolher Foto</Button>
-					<Button function={this.save}>Salvar</Button>
+					<Button function={this.pickImage} color={commonColors.info}>
+						Escolher Foto
+					</Button>
+					<Button function={this.save} color={commonColors.success}>
+						Salvar
+					</Button>
 				</View>
-			</View>
+			</SafeAreaView>
 		);
 	}
 }
@@ -59,8 +65,8 @@ const styles = StyleSheet.create({
 		backgroundColor: commonColors.main,
 	},
 	title: {
-		fontSize: 20,
-		marginTop: Platform.OS === 'ios' ? 30 : 10,
+		fontSize: 25,
+		marginTop: Platform.OS === 'ios' ? 40 : 20,
 		fontWeight: 'bold',
 		color: commonColors.title,
 	},
@@ -80,5 +86,7 @@ const styles = StyleSheet.create({
 		width: '100%',
 		flexDirection: 'row',
 		justifyContent: 'space-around',
+		marginTop: 40,
 	},
+	input: {},
 });

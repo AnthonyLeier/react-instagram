@@ -17,11 +17,13 @@ export default class AddComment extends Component {
 		let commentArea = null;
 		if (this.state.editMode) {
 			commentArea = (
-				<View style={styles.container}>
+				<View style={styles.containerEdit}>
 					<TextInput
-						placeholder="Pode comentar..."
+						placeholder="Adicione um comentário..."
 						style={styles.input}
 						autofocus
+						placeholderTextColor={commonColors.secondary}
+						color={commonColors.secondary}
 						value={this.state.comment}
 						onChangeText={comment => this.setState({comment})}
 						onSubmitEditing={() => {
@@ -37,7 +39,7 @@ export default class AddComment extends Component {
 		} else {
 			commentArea = (
 				<TWF onPress={() => this.setState({editMode: true})}>
-					<View style={styles.container}>
+					<View style={styles.containerView}>
 						<Icon name="comment-o" size={20} color={commonColors.subtitle} />
 						<Text style={styles.caption}>Adicione um comentário...</Text>
 					</View>
@@ -50,19 +52,24 @@ export default class AddComment extends Component {
 }
 
 const styles = StyleSheet.create({
-	container: {
+	containerView: {
 		flex: 1,
 		flexDirection: 'row',
 		alignItems: 'center',
 		marginTop: 10,
 		marginLeft: 15,
+		width: '100%',
+	},
+	containerEdit: {
+		flex: 1,
+		flexDirection: 'row',
+		alignItems: 'center',
+		marginHorizontal: 15,
+		justifyContent: 'space-between',
 	},
 	caption: {
 		marginLeft: 10,
 		fontSize: 12,
 		color: commonColors.lighter,
-	},
-	input: {
-		width: '90%',
 	},
 });
