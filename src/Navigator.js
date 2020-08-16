@@ -1,18 +1,42 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Feed from './screens/Feed';
 import AddPhoto from './screens/AddPhoto';
+import Login from './screens/Login';
+import Register from './screens/Register';
+import Profile from './screens/Profile';
+
 import commonColors from './info/commonColors';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-export default Navigator = () => {
+function LoginOrRegister() {
+	return (
+		<Stack.Navigator initialRouteName="Login">
+			<Stack.Screen name="Login" component={Login} />
+			<Stack.Screen name="Register" component={Register} />
+		</Stack.Navigator>
+	);
+}
+
+export default props => {
+	const isLogged = () => {
+		logged = false;
+
+		if (logged) return Profile;
+		else return LoginOrRegister;
+	};
+
 	return (
 		<NavigationContainer>
 			<Tab.Navigator
+				initialRouteName="Feed"
 				screenOptions={({route}) => ({
 					tabBarIcon: ({color, size}) => {
 						let iconName;
@@ -43,7 +67,7 @@ export default Navigator = () => {
 				<Tab.Screen name="Search" component={Feed} />
 				<Tab.Screen name="AddPhoto" component={AddPhoto} />
 				<Tab.Screen name="Notifications" component={Feed} />
-				<Tab.Screen name="Profile" component={Feed} />
+				<Tab.Screen name="Profile" component={isLogged()} />
 			</Tab.Navigator>
 		</NavigationContainer>
 	);
