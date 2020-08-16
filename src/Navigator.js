@@ -14,14 +14,15 @@ import Default from './screens/Default';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
-function LoginOrRegister() {
+User = () => {
 	return (
-		<Stack.Navigator initialRouteName="Login">
+		<Stack.Navigator initialRouteName="Profile">
+			<Stack.Screen name="Profile" component={Profile} />
 			<Stack.Screen name="Login" component={Login} />
 			<Stack.Screen name="Register" component={Register} />
 		</Stack.Navigator>
 	);
-}
+};
 
 export default props => {
 	const isLogged = () => {
@@ -63,7 +64,7 @@ export default props => {
 				<Tab.Screen name="Search" component={Default} />
 				<Tab.Screen name="AddPhoto" component={AddPhoto} />
 				<Tab.Screen name="Notifications" component={Default} />
-				<Tab.Screen name="Profile" component={isLogged()} />
+				<Tab.Screen name="Profile" component={User} />
 			</Tab.Navigator>
 		</NavigationContainer>
 	);

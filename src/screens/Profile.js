@@ -9,7 +9,7 @@ export default props => {
 	const options = {nickname: 'anthonyleier', email: 'anthonyleierlw@gmail.com', secure: true};
 
 	const logout = () => {
-		this.props.navigation.navigate('Auth');
+		props.navigation.navigate('Login');
 	};
 
 	return (
