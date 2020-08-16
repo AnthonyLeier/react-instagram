@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, TextInput, Image, Dimensions, Platform, ScrollView, Alert} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Image, Dimensions, Platform, Alert} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import commonColors from '../info/commonColors';
+import Button from '../components/Button';
+import Input from '../components/Input';
 
 export default class AppPhoto extends Component {
 	state = {
@@ -35,21 +37,15 @@ export default class AppPhoto extends Component {
 				<View style={styles.imageContainer}>
 					<Image source={this.state.image} style={styles.image} />
 				</View>
-				<View style={styles.input}>
-					<TextInput
-						placeholder="Descrição da Foto"
-						placeholderTextColor={commonColors.secondary}
-						value={this.state.comment}
-						onChangeText={comment => this.setState({comment})}
-					/>
-				</View>
+				<Input
+					placeholder="Descrição da Foto"
+					placeholderTextColor={commonColors.secondary}
+					value={this.state.comment}
+					onChangeText={comment => this.setState({comment})}
+				/>
 				<View style={styles.buttonContainer}>
-					<TouchableOpacity onPress={this.pickImage} style={styles.button}>
-						<Text style={styles.buttonText}>Escolher Foto</Text>
-					</TouchableOpacity>
-					<TouchableOpacity onPress={this.save} style={[styles.button, styles.buttonSave]}>
-						<Text style={styles.buttonText}>Salvar</Text>
-					</TouchableOpacity>
+					<Button function={this.pickImage}>Escolher Foto</Button>
+					<Button function={this.save}>Salvar</Button>
 				</View>
 			</View>
 		);
@@ -79,27 +75,6 @@ const styles = StyleSheet.create({
 		width: '100%',
 		height: Dimensions.get('window').width / 2,
 		resizeMode: 'center',
-	},
-	button: {
-		marginTop: 30,
-		padding: 10,
-		backgroundColor: commonColors.secondary,
-		borderRadius: 15,
-	},
-	buttonSave: {
-		backgroundColor: '#28a745',
-	},
-	buttonText: {
-		fontSize: 20,
-		color: commonColors.main,
-	},
-	input: {
-		marginTop: 20,
-		width: '90%',
-		height: '40%',
-		color: commonColors.secondary,
-		borderWidth: 1,
-		borderColor: commonColors.secondary,
 	},
 	buttonContainer: {
 		width: '100%',

@@ -2,15 +2,12 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
-
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import Feed from './screens/Feed';
 import AddPhoto from './screens/AddPhoto';
 import Login from './screens/Login';
 import Register from './screens/Register';
 import Profile from './screens/Profile';
-
 import commonColors from './info/commonColors';
 
 const Tab = createBottomTabNavigator();
@@ -28,7 +25,6 @@ function LoginOrRegister() {
 export default props => {
 	const isLogged = () => {
 		logged = false;
-
 		if (logged) return Profile;
 		else return LoginOrRegister;
 	};
@@ -61,8 +57,7 @@ export default props => {
 					inactiveTintColor: commonColors.subtitle,
 					style: {backgroundColor: commonColors.main, borderTopWidth: 0},
 					showLabel: false,
-				}}
-				hideShadow={true}>
+				}}>
 				<Tab.Screen name="Feed" component={Feed} />
 				<Tab.Screen name="Search" component={Feed} />
 				<Tab.Screen name="AddPhoto" component={AddPhoto} />

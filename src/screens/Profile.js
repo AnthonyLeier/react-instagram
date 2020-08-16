@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, SafeAreaView, Text, TouchableOpacity} from 'react-native';
 import {Gravatar} from 'react-native-gravatar';
+import Button from '../components/Button';
 import commonColors from '../info/commonColors';
 
 export default props => {
@@ -15,9 +16,7 @@ export default props => {
 			<Gravatar options={{email: options.email, secure: options.secure}} style={styles.avatar} />
 			<Text style={styles.nickname}>{options.nickname}</Text>
 			<Text style={styles.email}>{options.email}</Text>
-			<TouchableOpacity onPress={logout} style={styles.button}>
-				<Text style={styles.buttonText}>Sair</Text>
-			</TouchableOpacity>
+			<Button function={logout}>Sair</Button>
 		</SafeAreaView>
 	);
 };
