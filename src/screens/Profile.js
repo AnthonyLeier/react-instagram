@@ -8,17 +8,13 @@ import Header from '../components/Header';
 export default props => {
 	const options = {nickname: 'anthonyleier', email: 'anthonyleierlw@gmail.com', secure: true};
 
-	const logout = () => {
-		props.navigation.navigate('Login');
-	};
-
 	return (
 		<SafeAreaView style={styles.container}>
 			<Header />
 			<Gravatar options={{email: options.email, secure: options.secure}} style={styles.avatar} />
 			<Text style={styles.nickname}>{options.nickname}</Text>
 			<Text style={styles.email}>{options.email}</Text>
-			<Button function={logout} color={commonColors.danger} style={styles.button}>
+			<Button color={commonColors.danger} style={styles.button}>
 				Sair
 			</Button>
 		</SafeAreaView>
