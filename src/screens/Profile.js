@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {logout} from '../store/actions/user';
 import {StyleSheet, SafeAreaView, Text, View} from 'react-native';
@@ -10,15 +10,14 @@ import Header from '../components/Header';
 class Profile extends Component {
 	logout = () => {
 		this.props.onLogout();
-		this.props.navgation.navigate('Auth');
+		this.props.navgation.navigate('Login');
 	};
-	options = {nickname: 'anthonyleier', email: 'anthonyleierlw@gmail.com', secure: true};
 
 	render() {
 		return (
 			<SafeAreaView style={styles.container}>
 				<Header />
-				<Gravatar options={{email: options.email, secure: options.secure}} style={styles.avatar} />
+				<Gravatar options={{email: this.props.email, secure: true}} style={styles.avatar} />
 				<Text style={styles.nickname}>{this.props.name}</Text>
 				<Text style={styles.email}>{this.props.email}</Text>
 				<Button color={commonColors.danger} style={styles.button}>
@@ -65,7 +64,9 @@ const mapStateToProps = ({user}) => {
 };
 
 const mapDispatchToProps = dispatch => {
-	onLogout: () => dispatch(logout());
+	return {
+		onLogout: () => dispatch(logout()),
+	};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

@@ -19,22 +19,12 @@ User = () => {
 		<Stack.Navigator initialRouteName="Login">
 			<Stack.Screen name="Login" component={Login} />
 			<Stack.Screen name="Register" component={Register} />
+			<Stack.Screen name="Profile" component={Profile} />
 		</Stack.Navigator>
 	);
 };
 
 export default class Naviagtor extends Component {
-	state = {
-		logged: false,
-	};
-
-	isLogged = () => {
-		return Login;
-	};
-
-	logout = () => {
-		if (this.state.logged) this.setState({logged: false});
-	};
 	render() {
 		return (
 			<NavigationContainer>
@@ -69,7 +59,7 @@ export default class Naviagtor extends Component {
 					<Tab.Screen name="Search" component={Default} />
 					<Tab.Screen name="AddPhoto" component={AddPhoto} />
 					<Tab.Screen name="Notifications" component={Default} />
-					<Tab.Screen name="Profile" component={this.isLogged()} text={30} />
+					<Tab.Screen name="Profile" component={User} />
 				</Tab.Navigator>
 			</NavigationContainer>
 		);

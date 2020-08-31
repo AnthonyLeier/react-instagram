@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {login} from '../store/actions/user';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet, TextInput} from 'react-native';
 import Button from '../components/Button';
 import Input from '../components/Input';
 
@@ -13,7 +13,8 @@ class Login extends Component {
 	};
 
 	login = () => {
-		this.props.onLogin({...this.state})
+		this.props.onLogin({...this.state});
+		this.props.navigation.navigate('Profile');
 	};
 
 	register = () => {
@@ -23,7 +24,7 @@ class Login extends Component {
 	render() {
 		return (
 			<SafeAreaView style={styles.container}>
-				<Input
+				<TextInput
 					placeholder="Email"
 					style={styles.input}
 					autofocus
@@ -31,7 +32,7 @@ class Login extends Component {
 					value={this.state.email}
 					onChangeText={email => this.setState({email})}
 				/>
-				<Input
+				<TextInput
 					placeholder="Senha"
 					style={styles.input}
 					secureTextEntry
