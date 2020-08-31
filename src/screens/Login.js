@@ -1,16 +1,19 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {login} from '../store/actions/user';
 import {SafeAreaView, StyleSheet} from 'react-native';
 import Button from '../components/Button';
 import Input from '../components/Input';
 
-export default class Login extends Component {
+class Login extends Component {
 	state = {
+		name: 'Anthony',
 		email: '',
 		password: '',
 	};
 
 	login = () => {
-		this.props.navigation.navigate('Profile');
+		this.props.onLogin({...this.state})
 	};
 
 	register = () => {
@@ -49,3 +52,11 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 	},
 });
+
+const mapDispatchToProps = dispatch => {
+	return {
+		onLogin: user => dispatch(login(user)),
+	};
+};
+
+export default connect(null, mapDispatchToProps)(Login);

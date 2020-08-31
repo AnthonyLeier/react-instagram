@@ -29,8 +29,7 @@ export default class Naviagtor extends Component {
 	};
 
 	isLogged = () => {
-		if (this.state.logged) return Profile;
-		else return LoginOrRegister;
+		return Login;
 	};
 
 	logout = () => {

@@ -50,7 +50,7 @@ export default class AppPhoto extends Component {
 						Escolher Foto
 					</Button>
 					<Button function={this.save} color={commonColors.success}>
-						Salvar
+						Postar
 					</Button>
 				</View>
 			</SafeAreaView>

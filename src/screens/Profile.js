@@ -1,25 +1,33 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {logout} from '../store/actions/user';
 import {StyleSheet, SafeAreaView, Text, View} from 'react-native';
 import {Gravatar} from 'react-native-gravatar';
 import Button from '../components/Button';
 import commonColors from '../info/commonColors';
 import Header from '../components/Header';
 
-export default props => {
-	const options = {nickname: 'anthonyleier', email: 'anthonyleierlw@gmail.com', secure: true};
+class Profile extends Component {
+	logout = () => {
+		this.props.onLogout();
+		this.props.navgation.navigate('Auth');
+	};
+	options = {nickname: 'anthonyleier', email: 'anthonyleierlw@gmail.com', secure: true};
 
-	return (
-		<SafeAreaView style={styles.container}>
-			<Header />
-			<Gravatar options={{email: options.email, secure: options.secure}} style={styles.avatar} />
-			<Text style={styles.nickname}>{options.nickname}</Text>
-			<Text style={styles.email}>{options.email}</Text>
-			<Button color={commonColors.danger} style={styles.button}>
-				Sair
-			</Button>
-		</SafeAreaView>
-	);
-};
+	render() {
+		return (
+			<SafeAreaView style={styles.container}>
+				<Header />
+				<Gravatar options={{email: options.email, secure: options.secure}} style={styles.avatar} />
+				<Text style={styles.nickname}>{this.props.name}</Text>
+				<Text style={styles.email}>{this.props.email}</Text>
+				<Button color={commonColors.danger} style={styles.button}>
+					Sair
+				</Button>
+			</SafeAreaView>
+		);
+	}
+}
 
 const styles = StyleSheet.create({
 	container: {
@@ -48,3 +56,16 @@ const styles = StyleSheet.create({
 		marginTop: 100,
 	},
 });
+
+const mapStateToProps = ({user}) => {
+	return {
+		email: user.email,
+		name: user.name,
+	};
+};
+
+const mapDispatchToProps = dispatch => {
+	onLogout: () => dispatch(logout());
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
