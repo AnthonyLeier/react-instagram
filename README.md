@@ -1,4 +1,4 @@
-# Instagram-App
+# Instagram
 
 Este aplicativo é um sistema desenvolvido com React Native que busca se assemelhar aos componentes utilizados no Instagram e em toda a sua interface de Feed.
 
@@ -29,7 +29,7 @@ Com o aplicativo rodando, podemos inserir um nome e email para identificação d
 
 ## Preview
 
-![alt text](assets\imgs\preview.png)
+![Preview do Aplicativo](./assets/imgs/preview.png)
 
 ## Licença
 [MIT](https://choosealicense.com/licenses/mit/)
