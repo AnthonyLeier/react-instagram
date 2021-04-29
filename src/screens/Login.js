@@ -4,10 +4,11 @@ import {login} from '../store/actions/user';
 import {SafeAreaView, StyleSheet, TextInput} from 'react-native';
 import Button from '../components/Button';
 import Input from '../components/Input';
+import commonColors from '../info/commonColors';
 
 class Login extends Component {
 	state = {
-		name: 'Anthony',
+		name: '',
 		email: '',
 		password: '',
 	};
@@ -25,6 +26,13 @@ class Login extends Component {
 		return (
 			<SafeAreaView style={styles.container}>
 				<TextInput
+					placeholder="Nome"
+					style={styles.input}
+					autofocus
+					value={this.state.name}
+					onChangeText={name => this.setState({name})}
+				/>
+				<TextInput
 					placeholder="Email"
 					style={styles.input}
 					autofocus
@@ -32,15 +40,10 @@ class Login extends Component {
 					value={this.state.email}
 					onChangeText={email => this.setState({email})}
 				/>
-				<TextInput
-					placeholder="Senha"
-					style={styles.input}
-					secureTextEntry
-					value={this.state.password}
-					onChangeText={password => this.setState({password})}
-				/>
-				<Button function={this.login}>Login</Button>
-				<Button function={this.register}>Registrar</Button>
+				<Button function={this.login} style={styles.entrarButton}>
+					Entrar
+				</Button>
+				{/* <Button function={this.register}>Registrar</Button> */}
 			</SafeAreaView>
 		);
 	}
@@ -51,6 +54,10 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
+	},
+
+	entrarButton: {
+		backgroundColor: commonColors.main,
 	},
 });
 

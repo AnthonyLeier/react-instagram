@@ -1,6 +1,18 @@
 export default [
 	{
 		id: Math.random(),
+		nickname: 'anthonyleier',
+		email: 'anthonyleierlw@gmail.com',
+		image: require('../../assets/posts/anthony.png'),
+		comments: [
+			{
+				nickname: 'josipacevicz',
+				comment: 'Lindo <3',
+			},
+		],
+	},
+	{
+		id: Math.random(),
 		nickname: 'acaue_',
 		email: 'cacaukiller@gmail.com',
 		image: require('../../assets/posts/acaue_.jpg'),
